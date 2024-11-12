@@ -1,0 +1,65 @@
+<table>
+    <tr class="sticky">
+      <th></th>
+      <th>PRODUTO</th>
+      <th>CÓDIGO</th>
+      <th>UNIDADES</th>
+      <th>FIXA</th>
+      <th>PNEUMÁTICA</th>
+      <th>SIMPLES</th>
+      <th>DUPLICADA</th>
+      <th>ÓLEO</th>
+    </tr>
+  
+    <% fetesList.forEach((produto) => { %>
+    <tr class="linha-corpo">
+      <td class="campoEditar">
+        <i class="bi bi-pencil-square" onclick="cmdEditar(this)"></i>
+        
+      </td>
+      <td class="campoProduto">
+        <textarea rows="1" maxlength="15" disabled><%= produto.produto %></textarea>
+      </td>
+      <td class="campoCod_Fete">
+        <textarea rows="1" maxlength="4"><%= produto.codigo_fete %></textarea>
+      </td>
+      <td>
+        <textarea cols="1" rows="1" maxlength="2"><%= produto.unidades %></textarea>
+      </td>
+      <% if(1){ %>
+      <td class="frot1">
+        <textarea rows="1" maxlength="2"><%= produto.fixa %></textarea>
+      </td>
+      <td class="frot1">
+        <textarea cols="1" rows="1" maxlength="2" onchange="testChange(this.value)"><%= produto.pneumatica %></textarea>
+      </td>
+      <% } %>
+      <td class="frot3">
+        <textarea cols="1" rows="1" maxlength="2"><%= produto.simples %></textarea>
+      </td>
+      <td class="frot3">
+        <textarea cols="1" rows="1" maxlength="2"><%= produto.duplicada %></textarea>
+      </td>
+      <td class="frot2">
+        <textarea cols="1" rows="1" maxlength="2"><%= produto.oleo %></textarea>
+      </td>
+      <td class="acoes">
+        
+      </td>
+    </tr>
+
+    <% }) %>
+    <tr ondblclick="eventDblClick()">
+      <td class="campoProduto corpo">
+        <a href="/teste.ejs" id="novaFETE">Add</a>
+      </td>
+      <td>
+        <textarea cols="1" rows="1"></textarea>
+      </td>
+      <td>
+        <a href="/"><i class="bi bi-funnel-fill"></i></a>
+        
+      </td>
+    </tr>
+
+  </table>

@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --corFundoPrincipal: #2e2e2e;
+  --corFundoSegTom: #ffffff00;
+  --corFundoTerTom: #ffffff10;
+  --corMouseHover: #ffffff34;
+  --corBranca: white;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Nunito", Roboto, sans-serif;
+  font-weight: 400;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  background-color: var(--corFundoPrincipal);
+  color: var(--corBranca);
+  transform: scale(1.0);
+  transform-origin: 0 0;
+}
+
+main {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+}
+
+container {
+  max-width: 100%;
+}
+
+th {
+  background-color: var(--corFundoSegTom);
+  padding-top: 0.6rem;
+  padding-bottom: 0.2rem;
+  padding-inline: 0.8rem;
+  text-align: center;
+  align-items: center;
+  height: 2rem;
+}
+
+.campoEditar{
+  display: flex;
+  max-width: 15px;
+  letter-spacing: 5px;
+  font-size: 12pt;
+  cursor: pointer;
+}
+
+td {
+  font-size: 12pt;
+  text-align: center;
+  background-color: var(--corFundoSegTom);
+  border-top: 1px rgba(255, 255, 255, 0.021) solid;
+  border-bottom: 1px rgba(255, 255, 255, 0.021) solid;
+  padding-top: 0.6rem;
+  padding-bottom: 0.2rem;
+  padding-inline: 0.8rem;
+  
+}
+
+.campoCod_Fete {
+  width: 0.1rem !important;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.frot1, .frot2, .frot3 {
+  max-width: 5rem;
+} 
+
+tr:hover {
+  animation: btn-pisca 1.2s ease-in-out;
+}
+
+.sticky {
+  position: sticky;  
+  top: 0;
+  background-color: #005499d3;
+}
+
+
+@keyframes btn-pisca {
+  10% {
+    text-shadow: 0 0 10px #fdfdfd;
+  }
+  25% {
+    text-shadow: 0 0 20px #fdfdfd;
+  }
+  50% {
+    text-shadow: 0 0 40px #fdfdfd;
+  }
+  75% {
+    text-shadow: 0 0 80px #fdfdfd;
+  }
+  100% {
+    text-shadow: 0 0 160px #fdfdfd;
+  }
+}
+
+textarea {
+  background-color: transparent;
+  border: transparent;
+  resize: none;
+  color: white;
+  text-align: center;
+  align-items: center;
+  width: 100%; 
+  min-height: 18px;
+  overflow: hidden !important;
+  
+}
+
+.campoProduto textarea {
+  min-width: 100px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.edit-delete {
+  display: none;
+  color: var(--corFundoPrincipal) !important;
+  background-color: transparent;
+  border: none;
+  text-wrap: nowrap;
+}
+
+a {
+  color: var(--corBranca) !important;
+  
+
+}
+
+a:visited {
+  color: var(--corFundoPrincipal);
+}
+
+#novaFETE{
+  color: #fdfdfd7c !important;
+  font-weight: 800;  
+}
+
+.linha-corpo:hover{
+  background-color: var(--corMouseHover);
+}

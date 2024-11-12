@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <title>To Do LIst</title>
+  </head>
+  <body>
+    <main>
+      <container>
+
+        <div class="sticky">
+          <a href="/"><i class="bi bi-plus-circle-fill"></i></a>
+        </div>
+        <header>
+          <% if(1) { %>
+          <form action="/create" method="post">
+            <input type="text" name="fetes" id="fetes" placeholder="PRODUTO" />
+            <input type="text" name="cod" id="cod" placeholder="CÓDIGO" />
+            <input type="number" name="config" id="config" min="0" max="6" />
+            <button id="addButton" type="submit">Adicionar</button>
+          </form>
+          <% } else if (fetes != null) { %>
+          <form action="/updateOne/<%= fetes._id %>" method="post">
+            <input type="text" name="fetes" id="fetes" value="<%= fetes.fetes %>"/>
+            <button id="addButton" type="submit">Atualizar</button>
+          </form>
+          <% } %>
+        </header>
+
+        <table>
+          <tr>
+            <th>PRODUTO</th>
+            <th>CÓDIGO</th>
+            <th>FETES</th>
+            
+          </tr>
+          <% fetesList.forEach((fetes) => { %>
+          <tr ondblclick="eventDblClick()">
+            <td class="campoProduto corpo">
+              <textarea rows="1" maxlength="15" disabled><%= fetes.fetes %></textarea>
+            </td>
+            <td class="corpo">
+              <textarea cols="1" rows="1"></textarea>
+            </td>
+
+            <td class="corpo">
+              <textarea cols="1" rows="1"></textarea>
+            </td>
+            <td class="corpo">
+              <textarea cols="1" rows="1"></textarea>
+            </td>
+          </tr>
+
+          <% }) %>
+          <tr ondblclick="eventDblClick()">
+            <td class="campoProduto corpo">
+              <a href="/teste.ejs" id="novaFETE">Add</a>
+            </td>
+            <td class="corpo">
+              <textarea cols="1" rows="1"></textarea>
+            </td>
+
+            <td class="corpo">
+              <textarea cols="1" rows="1"></textarea>
+            </td>
+            <td class="corpo">
+              <textarea cols="1" rows="1"></textarea>
+            </td>
+            <td class="corpo">
+              <textarea cols="1" rows="1"></textarea>
+            </td>
+
+            <td class="corpo">
+              <textarea cols="1" rows="1"></textarea>
+            </td>
+            <td class="corpo">
+              <textarea cols="1" rows="1"></textarea>
+            </td>
+          </tr>
+
+
+        </table>
+      </container>
+      
+<a href="#" role="button" onClick="copyIpPublisher()" ><span id="ip_publisher">TRTRTRTR</span></a>
+
+    </main>
+    <script src="/reload/reload.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

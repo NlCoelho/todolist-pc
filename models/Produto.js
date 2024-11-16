@@ -9,15 +9,15 @@ const discoSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  codigo_fete: {
+  fixa: {
     type: String,
     require: true,
   },
-  unidades: {
-    type: Number,
+  pneumatica: {
+    type: String,
     require: true,
   },
-  duplicada: {
+  oleo: {
     type: String,
     require: true,
   },
@@ -25,8 +25,32 @@ const discoSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  oleo: {
+  duplicada: {
     type: String,
+    require: true,
+  },
+  kos: {
+    type: String,
+    require: true,
+  },
+  vke: {
+    type: String,
+    require: true,
+  },
+  kosvke: {
+    type: String,
+    require: true,
+  },
+  codFeteFrot1: {
+    type: Number,
+    require: true,
+  },
+  codFeteFrot2: {
+    type: Number,
+    require: true,
+  },
+  codFeteFrot3: {
+    type: Number,
     require: true,
   },
   check: {

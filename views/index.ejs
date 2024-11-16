@@ -3,17 +3,17 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, target-densitydpi=device-dpi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimun-scale=0.5, shrink-to-fit=no"/>
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
     <title>To Do LIst</title>
   </head>
   <body>
     <main>
-      <container>
+      
         <header>
-          <input type="text" id="inputPesq" placeholder="PRODUTO" onkeyup="Pesq(this.value)" />
-          <% if(1) { %>
+          <% if(0) { %>
+            <input type="text" id="inputPesq" placeholder="PRODUTO" onkeyup="Pesq(this.value)" />
           <form action="/create" method="post">
             <input type="text" name="fetes" id="fts" placeholder="PRODUTO" />
             <input type="text" name="cod" id="cod" placeholder="CÓDIGO" />
@@ -21,21 +21,21 @@
             
             <button id="addButton" type="submit">Adicionar</button>
           </form>
-          <% } else if (fetes != null) { %>
+          <% } else if (0) { %>
           <form action="/updateOne/<%= fetes._id %>" method="post">
             <input type="text" name="fetes" id="fetes" value="<%= fetes.fetes %>"/>
             <button id="addButton" type="submit">Atualizar</button>
           </form>
           <% } %>
         </header>
-
-        <%- include('./components/modeloTabela.ejs') %>
+        
+        
+      
+      <%- include('./components/modeloTabela.ejs') %>
         <% if(1) { %>
           <%- include('./components/modalSearch.ejs') %>
         <% } %>  
-      </container>
       
-
     </main>
     <script src="/reload/reload.js"></script>
     <script src="script.js"></script>

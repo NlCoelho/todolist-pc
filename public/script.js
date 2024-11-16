@@ -56,20 +56,6 @@ function copyIpPublisher() {
   console.log("Copiado " + tl_sel + " para a Área de Trânsferência...");
 }
 
-const tes = document.getElementById("fts");
-tes.addEventListener("blur", () => {
-  val = tes.value;
-  console.log("valor " + val.indexOf("s"));
-
-  if (val.indexOf(0) == "\t") {
-    console.log(val.indexOf(0) == " " + val.indexOf(0));
-    val = val.indexOf(1, val.length);
-    console.log(val.length);
-  }
-
-  return 0;
-});
-
 let keySearch = "";
 
 /*
@@ -120,7 +106,6 @@ const Pesq = (keyPesq) => {
     textElement = textElement.toUpperCase();
     if (textElement.indexOf(textInput) > -1) {
       el[i].parentNode.style.display = "table-row";
-      console.log(el[i].textContent);
       if (j % 2 == 0) {
         el[i].parentNode.style.backgroundColor = "#ffffff10";
       } else {
@@ -131,10 +116,6 @@ const Pesq = (keyPesq) => {
       el[i].parentNode.style.display = "none";
     }
   }
-};
-
-const testChange = (val) => {
-  console.log(val);
 };
 
 const cmdEditar = (el) => {
@@ -148,5 +129,23 @@ const cmdEditar = (el) => {
 
 const confirmaEditar = () => {
   console.log("Boa");
-  return 1; 
+  return 1;
 };
+
+const textChange = (el) => {
+  const tr = el.parentNode.parentNode;
+  tr.children[8 - 1].setAttribute("class", "test");
+};
+
+const tr = document.querySelectorAll("tr");
+for (let i = 0; tr.length; i += 1) {
+  let originColor;
+  tr[i].addEventListener("mouseover", ()=> {
+    originColor = tr[i].children[8].children[0].style.color;
+    tr[i].children[8].children[0].style.color = "#fff";
+  });
+  tr[i].addEventListener("mouseout", ()=> {
+    tr[i].children[8].children[0].style.color = originColor;
+  });
+}
+

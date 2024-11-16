@@ -6,7 +6,6 @@ routes.post("/create", FetesController.createFetes);
 routes.post("/updateOne/:id", FetesController.updateOneFetes);
 routes.get("/delete", FetesController.fetesDelete);
 routes.get("/getById/:id/:method", FetesController.getById);
-routes.get("/teste.ejs", FetesController.getById);
 routes.get("/searchProdutos/:stringSearch", FetesController.getSearchProdutos);
 
 

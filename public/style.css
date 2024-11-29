@@ -23,14 +23,13 @@ body {
   justify-content: center;
   background-color: var(--corFundoPrincipal);
   color: var(--corBranca);
-  
 }
 
 main {
   display: flex !important;
   flex-direction: column;
   align-items: center;
-  }
+}
 
 th {
   background-color: var(--corFundoSegTom);
@@ -42,30 +41,34 @@ th {
   height: 2rem;
 }
 
-.campoCod_Fete {
+.titleProduto {
+  min-width: 8rem;
+}
+
+.titleCodFete {
   width: 2rem;
 }
 
-.frot1-fixa {
+.titleConj,
+.titleFixa,
+.titlePneu,
+.titleSimples,
+.titleDupla,
+.titleOleo {
   width: 1rem;
 }
 
 @media only screen and (max-width: 600px) {
-  .campoProduto textarea {
-    width: 10rem;
+  body {
+    justify-content: flex-start;
+    zoom: 100%;
   }
-
-  .campoCod_Fete {
-    width: 2rem;
-  }
-  
 }
 
 td {
   font-size: 12pt;
   text-align: center;
   background-color: var(--corFundoSegTom);
-
   padding-top: 0.6rem;
   padding-bottom: 0.2rem;
   padding-inline: 0;
@@ -95,45 +98,59 @@ td {
   }
 }
 
-textarea {
-  background-color: transparent;
-  border: transparent;
-  resize: none;
-  color: white;
-  text-align: center;
-  align-items: center;
-  width: 100%;
-  min-height: 18px;
-  margin-inline: 0;
-  overflow: hidden !important;
-}
-
 a:visited {
   color: var(--corFundoPrincipal);
 }
 
-.btn-confirm a{
+.btn-confirm a {
   color: #fdfdfd;
   font-size: 2rem;
-} 
+}
 
 #novaFETE {
   color: #fdfdfd7c !important;
   font-weight: 800;
 }
 
-.linha-corpo:nth-child(even) {
+.linha-corpo:nth-child(even){
   background-color: var(--corFundoTerTom);
 }
 
+.linha-corpo:hover {
+  background-color: var(--corMouseHover);
+}
 
-.btn-search{
+td input {
+  background-color: transparent;
+  text-align: center;
+  border: none;
+  color: #fdfdfd;
+  width: 100%;
+  min-height: 18px;
+  overflow: visible;
+}
+
+td span,
+button {
+  color: transparent;
+  background-color: transparent;
+  border: none;
+  transition: color 0.8s ease-in;
+}
+
+td span:hover,
+button:hover {
+  text-shadow: 0 0 20px #fdfdfd;
+  zoom: 1.02;
+}
+
+.btn-search {
   color: #fff !important;
   font-size: 1rem;
   animation: btn-pisca 8s infinite;
 }
 
-.btn-edit-check a{
+.btn-edit-check a {
   color: transparent;
 }
 
@@ -141,3 +158,15 @@ a:visited {
   animation: btn-pisca 2.2s infinite;
   color: white !important;
 }
+
+.topo {
+  display: flex;
+  justify-content: right;
+  background-color: #005499d3;
+  width: 100%;
+}
+
+.topo div{
+  padding: 1.2rem 1.2rem 0 0 ;  
+}
+

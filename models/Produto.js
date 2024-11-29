@@ -5,7 +5,15 @@ const discoSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  subtipo: {
+    type: String,
+    require: true,
+  },
   produto: {
+    type: String,
+    require: true,
+  },
+  cod: {
     type: String,
     require: true,
   },
@@ -38,6 +46,18 @@ const discoSchema = new mongoose.Schema({
     require: true,
   },
   kosvke: {
+    type: String,
+    require: true,
+  },
+  roteiro: {
+    type: String,
+    require: true,
+  },
+  local: {
+    type: String,
+    require: true,
+  },
+  nfetes: {
     type: String,
     require: true,
   },

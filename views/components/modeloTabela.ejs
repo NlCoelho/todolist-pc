@@ -1,52 +1,102 @@
-<table>
+<form action="/create" method="post">
+  <table>
     <tr class="sticky">
-      <th>PRODUTO</th>
-      <th>CÓD</th>
-      <th>CONJ</th>
-      <th>FIXA</th>
-      <th>AR</th>
-      <th>SIMPLES</th>
-      <th>DUPLA</th>
-      <th>ÓLEO</th>
-      <th><a href="/"><i class="btn-search bi bi-search"></i></a></th>
+      <th class="titleProduto">PRODUTO</th>
+      <th class="titleCodFete">CÓD</th>
+      <th class="titleConj">CONJ</th>
+      <th class="titleFixa">FIXA</th>
+      <th class="titlePneu">MÓVEL</th>
+      <th class="titleSimples">SIMPLES</th>
+      <th class="titleDupla">DUPLA</th>
+      <th class="titleOleo">ÓLEO</th>
+      <th>
+        <a href="/"><i class="btn-search bi bi-search"></i></a>
+      </th>
     </tr>
-      
-    <% fetesList.forEach((produto) => { %>
-    <tr class="linha-corpo">
-      <td class="campoProduto">
-        <textarea rows="1" maxlength="15" disabled><%= produto.produto %></textarea>
-      </td>
-      <td class="campoCod_Fete">
-        <textarea rows="1" maxlength="4" onchange="textChange(this)" disabled><%= produto.codigo_fete %></textarea>
-      </td>
-      <td class="campoCod_Conjuntos">
-        <textarea rows="1" maxlength="4" onchange="textChange(this)" disabled><%= produto.codigo_fete %></textarea>
-      </td>
-      <% if(1){ %>
-      <td class="frot1 frot1-fixa">
-        <textarea rows="1" maxlength="4" onchange="textChange(this)" disabled><%= produto.fixa %></textarea>
-      </td>
-      <td class="frot1 frot1-pneumatica">
-        <textarea cols="1" rows="1" maxlength="4" onchange="textChange(this)" disabled><%= produto.pneumatica %></textarea>
-      </td>
-      <% } %>
-      <td class="frot3 frot3-simples">
-        <textarea cols="1" rows="1" maxlength="4" onchange="textChange(this)" disabled><%= produto.simples %></textarea>
-      </td>
-      <td class="frot3 frot3-duplicada">
-        <textarea cols="1" rows="1" maxlength="4" onchange="textChange(this)" disabled><%= produto.duplicada %></textarea>
-      </td>
-      <td class="frot2 chek2">
-        <textarea cols="1" rows="1" maxlength="4" onchange="textChange(this)" disabled><%= produto.oleo %></textarea>
-      </td>
-      <td class="btn-edit-check">
-          <a href="" class="btn-editar"><i class="bi bi-pen"></i></a> 
-          <a href="/" class="btn-check"><i class="bi bi-check2-circle"></i></a>
-          
-          
-      </td>
-    </tr>
-  
-    <% }) %>
-    
+
+    <form action="/" method="post">
+      <% fetesList.forEach((produto) => { %>
+      <tr class="linha-corpo <%= produto.tipo %>">
+        <td class="campoProduto">
+          <input
+            disabled
+            name="produto"
+            rows="1"
+            maxlength="15"
+            value="<%= produto.produto %>"
+          />
+        </td>
+        <td class="campoCod_Fete">
+          <input
+            disabled
+            name="campoCod"
+            rows="1"
+            maxlength="4"
+            value="<%= produto.cod %>"
+          />
+        </td>
+        <td class="campoCod_Conjuntos">
+          <input
+            disabled
+            name="conjuntos"
+            rows="1"
+            maxlength="4"
+            value="<%= produto.nfetes %>"
+          />
+        </td>
+        <% if(1){ %>
+        <td class="frot1 frot1-fixa">
+          <input
+            disabled
+            type="text"
+            name="fixa"
+            value="<%= produto.fixa %>"
+          />
+        </td>
+        <td class="frot1 frot1-pneumatica">
+          <input
+            disabled
+            name="pneu"
+            onclick="btnTex(this)"
+            value="<%= produto.pneumatica %>"
+          />
+        </td>
+        <% } %>
+        <td class="frot3 frot3-simples">
+          <input
+            disabled
+            name="simples"
+            cols="1"
+            rows="1"
+            maxlength="4"
+            value="<%= produto.simples %>"
+          />
+        </td>
+        <td class="frot3 frot3-duplicada">
+          <input
+            disabled
+            name="duplicada"
+            cols="1"
+            rows="1"
+            maxlength="4"
+            value="<%= produto.duplicada %>"
+          />
+        </td>
+        <td class="frot2 chek2">
+          <input
+            disabled
+            name="oleo"
+            cols="1"
+            rows="1"
+            maxlength="4"
+            value="<%= produto.oleo %>"
+          />
+        </td>
+        <td class="campoBtn">
+          <span onclick="bttVex(this)"><i class="bi bi-pen"></i></span>
+        </td>
+      </tr>
+      <% }) %>
+    </form>
   </table>
+</form>

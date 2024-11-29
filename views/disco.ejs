@@ -16,34 +16,17 @@
   </head>
   <body>
     <main>
-      <header class="topo">
-        <div>
-          <input
-            type="radio"
-            onchange="Pesq()"
-            name="tipo"
-            value="DC"
-            id="radioDC"
-            checked
-          />
-          <label for="radioDC">Disco</label>
-          <input
-            type="radio"
-            onchange="Pesq()"
-            name="tipo"
-            value="spring"
-            id="radioSpring"
-          />
-          <label for="radioSpring">Mola</label>
-
-          <input
-            type="text"
-            id="inputPesq"
-            placeholder="PRODUTO"
-            onkeyup="Pesq()"
-          />
-        </div>
-        <% if(0) { %>
+      <header>
+        <% if(1) { %>
+        <a href="/disco">Disco</a>
+        <a href="/mola">Mola</a>
+          
+        <input
+          type="text"
+          id="inputPesq"
+          placeholder="PRODUTO"
+          onkeyup="Pesq(this.value)"
+        />
         <form action="/create" method="post">
           <input type="text" name="fetes" id="fts" placeholder="PRODUTO" />
           <input type="text" name="codigo" id="cod" placeholder="CÓDIGO" />
@@ -64,8 +47,7 @@
         <% } %>
       </header>
 
-      <%- include('./components/modeloTabela.ejs') %> <% if(0) { %> <%-
-      include('./components/modalSearch.ejs') %> <% } %>
+      <%- include('./components/modeloTabelaDisco.ejs') %>
     </main>
     <script src="/reload/reload.js"></script>
     <script src="script.js"></script>

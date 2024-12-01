@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabuada</title>
+  </head>
+  <body>
+    <h1>EU SOU O SIGMA DA BAHIA</h1>
+    <input onchange="mult()" type="number" id="fator1" />
+    <span>X</span>
+    <input onchange="mult()" type="number" id="fator2" />
+    <span id="result">gdhgdgd</span>
+  </body>
+  <script>
+    function mult () {
+    let fator1 = document.getElementById("fator1");
+    let fator2 = document.getElementById("fator2");
+    let result = document.getElementById("result");
+
+    result.innerText = fator1.value * fator2.value;
+    }
+  </script>
+</html>

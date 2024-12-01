@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimun-scale=0.5, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <title>To Do LIst</title>
+  </head>
+  <body>
+    <main>
+      <header class="topo">
+        <div>
+          <input
+            type="radio"
+            onchange="Pesq()"
+            name="tipo"
+            value="DC"
+            id="radioDC"
+            checked
+          />
+          <label for="radioDC">Disco</label>
+          <input
+            type="radio"
+            onchange="Pesq()"
+            name="tipo"
+            value="spring"
+            id="radioSpring"
+          />
+          <label for="radioSpring">Mola</label>
+
+          <input
+            type="text"
+            id="inputPesq"
+            placeholder="BUSCA"
+            onkeyup="Pesq()"
+          />
+        </div>
+        <% if(0) { %>
+        <form action="/create" method="post">
+          <input type="text" name="fetes" id="fts" placeholder="PRODUTO" />
+          <input type="text" name="codigo" id="cod" placeholder="CÓDIGO" />
+          <input type="number" name="config" id="conf" min="0" max="6" />
+
+          <button id="addButton" type="submit">Adicionar</button>
+        </form>
+        <% } else if (0) { %>
+        <form action="/updateOne/<%= fetes._id %>" method="post">
+          <input
+            type="text"
+            name="fetes"
+            id="fetes"
+            value="<%= fetes.fetes %>"
+          />
+          <button id="addButton" type="submit">Atualizar</button>
+        </form>
+        <% } %>
+      </header>
+
+      <%- include('./components/modeloTabela.ejs') %> <% if(0) { %> <%-
+      include('./components/modalSearch.ejs') %> <% } %>
+    </main>
+    <script src="/reload/reload.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

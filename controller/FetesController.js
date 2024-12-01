@@ -1,5 +1,13 @@
 const Produto = require("../models/Produto.js");
 
+const getSrcoelho = async (req, res) => {
+  return res.render("srcoelho");
+}
+
+const getTeste = async (req, res) => {
+  return res.render("teste");
+}
+
 const getAllFetes = async (req, res) => {
   console.log(req.body);
   try {
@@ -14,8 +22,8 @@ const getAllFetes = async (req, res) => {
       createFetes();
       return;
     }
-    const discoList = await Produto.find({ tipo: "DC" }).sort({ produto: 1 }).limit(30);
-    const springList = await Produto.find({ tipo: "spring" }).sort({ produto: 1 }).limit(5);
+    const discoList = await Produto.find({ tipo: "DC" }).sort({ produto: 1 }).limit(50);
+    const springList = await Produto.find({ tipo: "spring" }).sort({ produto: 1 }).limit(50);
     const fetesList = discoList.concat(springList);
     console.log(fetesList.length); 
     //const springList = await Produto.find().sort({ produto: 1 });
@@ -112,4 +120,6 @@ module.exports = {
   getSearchProdutos,
   getAllDisco,
   getAllMola,
+  getTeste,
+  getSrcoelho,
 };

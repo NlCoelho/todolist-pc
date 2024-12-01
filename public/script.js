@@ -125,7 +125,8 @@ function Pesq() {
   tr.children[8 - 1].setAttribute("class", "test");
 };*/
 
-function bttVex(el) {
+function bttVex(el, nId) {
+  console.log(nId);
   let nElements = el.parentNode.parentNode.children.length;
   for (let i = 1; i < nElements; i += 1) {
     let element = el.parentNode.parentNode.children[i].children[0];
@@ -134,7 +135,7 @@ function bttVex(el) {
       element.focus();
     }
   }
-  el.parentNode.innerHTML = `<button type="submit"><i class="bi bi-check2-circle"></i></button>`;
+  el.parentNode.innerHTML = `<button onclick="testBt('<%= produto.id %>')"><i class="bi bi-check2-circle"></i></button>`;
 }
 
 /*
@@ -148,4 +149,7 @@ function bttVex(el) {
 /* }
   
 }*/
-
+function testBt(el){
+  console.log(el);
+  
+}

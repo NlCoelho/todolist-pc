@@ -16,11 +16,9 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(routes);
 
-/*
 app.get("/", (req, res) => {
   res.render("index");
 }); 
-*/
 
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);

@@ -1,7 +1,7 @@
 const routes = require("express").Router();
 const FetesController = require("../controller/FetesController");
 
-routes.get("/", FetesController.getAllFetes);
+routes.get("/:id?", FetesController.getAllFetes);
 routes.post("/create", FetesController.createFetes);
 routes.post("/updateOne/:id", FetesController.updateOneFetes);
 routes.get("/delete", FetesController.fetesDelete);

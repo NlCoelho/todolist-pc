@@ -14,8 +14,8 @@ const getAllFetes = async (req, res) => {
       createFetes();
       return;
     }
-    const discoList = await Produto.find({ tipo: "DC" }).sort({ produto: 1 }).limit();
-    const springList = await Produto.find({ tipo: "spring" }).sort({ produto: 1 }).limit();
+    const discoList = await Produto.find({ tipo: "DC" }).sort({ produto: 1 }).limit(30);
+    const springList = await Produto.find({ tipo: "spring" }).sort({ produto: 1 }).limit(5);
     const fetesList = discoList.concat(springList);
     console.log(fetesList.length); 
     //const springList = await Produto.find().sort({ produto: 1 });

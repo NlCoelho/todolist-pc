@@ -24,6 +24,7 @@
             rows="1"
             maxlength="15"
             value="<%= produto.produto %>"
+            
           />
         </td>
         <td class="campoCod_Fete">
@@ -93,7 +94,7 @@
           />
         </td>
         <td class="campoBtn">
-          <span onclick="bttVex(this)"><i class="bi bi-pen"></i></span>
+          <span onclick="bttVex(this, '<%= produto.id %>')"><i class="bi bi-pen"></i></span>
         </td>
       </tr>
       <% }) %>
